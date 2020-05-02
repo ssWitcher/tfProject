@@ -1,0 +1,17 @@
+version: "3"
+networks:
+  common-network:
+    driver: bridge
+
+services:
+  node:
+    build: "./node"
+    networks:
+      - common-network
+    ports: 
+      - '9000:9000'
+
+  python:
+    build: "./python"
+    networks:
+      - common-network
